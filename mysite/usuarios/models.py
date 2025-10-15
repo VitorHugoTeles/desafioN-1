@@ -6,6 +6,6 @@ from django.db import models
 
 class Usuario(models.Model):
     nome = models.CharField(max_length=150)
-    senha = models.CharField(max_length=500)
+    password = models.CharField(max_length=128)
     email = models.EmailField(unique=True)
     username= models.CharField(max_length=150, unique=True)
