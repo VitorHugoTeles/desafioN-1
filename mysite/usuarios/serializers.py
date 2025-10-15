@@ -4,5 +4,7 @@ from .models import Usuario
 class UsuarioSerializer(serializers.ModelSerializer):
     class Meta:
         model = Usuario
-        filds = ('id, nome, senha, email, username')
-    
+        fields = ('__all__')
+        extra_krawgs = {
+            'senha' : {'write_only': True} 
+        }
