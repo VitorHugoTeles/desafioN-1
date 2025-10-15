@@ -17,8 +17,14 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic.base import RedirectView
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("api/", include('usuarios.urls') )
+    path(
+        "",  # 1º argumento: a rota (URL vazia, o root)
+        RedirectView.as_view(url='/api/usuario', permanent=False),  # 2º argumento: a view
+        name='api-root-redirect'  # 3º argumento: o nome da URL (passado para path(), não para as_view())
+    ),    
+    path("api/", include('usuarios.urls')),
+    path("admin/", admin.site.urls)
 ]
