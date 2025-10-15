@@ -5,17 +5,34 @@ utilizado python 3.12
 ambiente virtual : conda
 banco de dados: sqlite3
 
-instalação 
-no terminal digite:
-  git clone https://github.com/VitorHugoTeles/desafioN-1.git
-  cd desafioN-1/mysite
-  python -m venv .venv
-  source .venv/bin/activate  # No Linux/macOS
-  # .venv\Scripts\activate   # No Windows
-  pip install -r requirements.txt
-  python manage.py migrate
-  python manage.py createsuperuser
-  python manage.py runserver
+## 3. Instalação e Configuração
+
+1.  **Clone o Repositório:**
+    ```bash
+    git clone git@github.com:VitorHugoTeles/desafioN-1.git
+    cd desafioN-1/mysite
+    ```
+2.  **Crie e Ative o Ambiente Virtual:**
+    ```bash
+    python -m venv .venv
+    source .venv/bin/activate 
+    ```
+3.  **Instale as Dependências:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+4.  **Execute as Migrações:**
+    ```bash
+    python manage.py migrate
+    ```
+5.  **Crie um Superusuário (para acesso ao Admin):**
+    ```bash
+    python manage.py createsuperuser
+    ```
+6.  **Execute o Servidor:**
+    ```bash
+    python manage.py runserver
+    ```
 
 Acesso:
 
