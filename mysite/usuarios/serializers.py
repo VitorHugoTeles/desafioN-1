@@ -8,7 +8,12 @@ class UsuarioSerializer(serializers.ModelSerializer):
         fields = ('__all__')
         extra_kwargs = {
             'password' : {'write_only': True}}
-        
-def create(self, validated_data):
-    validated_data['password'] = make_password(validated_data['password'])
-    return super(UsuarioSerializer, self).create(validated_data)
+    def create(self, validated_data):
+        # ADICIONE ESTA LINHA:
+        print("==================================================")
+        print("EXECUTANDO HASH DE SENHA PARA:", validated_data['username'])
+        print("==================================================")
+
+        # As linhas de hashing continuam
+        validated_data['password'] = make_password(validated_data['password'])
+        return super(UsuarioSerializer, self).create(validated_data) 
