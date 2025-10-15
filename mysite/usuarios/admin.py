@@ -5,6 +5,6 @@ from .models import Usuario
 class UsuarioAdmin(admin.ModelAdmin):
     list_display = ("username", "nome", "email")
     list_display_links = ("username", "nome")
-    list_filter = ("nomes")
-    search_fields = ("emai". "username")
-admin.site.register(Usuario)
+    list_filter = ("nome",)
+    search_fields = ("emai", "username")
+admin.site.register(Usuario, UsuarioAdmin)
